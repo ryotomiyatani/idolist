@@ -1,0 +1,18 @@
+<% if @idols %>
+  <div class="row">
+    <% @idols.each do |idol| %>
+      <div class="idol">
+        <div class="col-md-3 col-sm-4 col-xs-12">
+          <div class="panel panel-default">
+            <div class="panel-heading text-center">
+              <img src="<%= idol.idol_image %>" alt="" >
+            </div>
+            <div class="panel-body">
+              <p class="idol-title"><%= idol.idol_name %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>

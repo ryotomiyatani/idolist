@@ -1,0 +1,10 @@
+<% if admin_logged_in? %>
+<h1>アイドル一覧</h1>
+
+<ul>
+  <% @idols.each do |idol| %>
+     <li><%= link_to idol.id, idol %> : <%= idol.idol_name %></li>
+     <li><%= link_to "このアイドルを削除する", idol, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: 'btn btn-danger btn-xs' %><li>
+  <% end %>
+</ul>
+<% end %>

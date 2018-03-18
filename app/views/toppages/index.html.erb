@@ -1,0 +1,116 @@
+<% content_for :cover do %>
+  <div class="cover">
+    <div class="cover-inner"> 
+    
+    <% unless logged_in? || admin_logged_in? %>
+      <div class="cover-comments">
+        <h4>あなたのお気に入りのアイドルグループを管理しよう。<br>
+            好きなグループを見つけて、行きたい現場をまとめよう。<br>
+            好きなグループから繋がる、友達を見つけよう。</h4>
+      </div>
+    <% end %>
+      <div class="cover-contents">
+        <h1>あなたの好きなアイドルを管理しよう</h1>
+        <% unless logged_in? || admin_logged_in? %>
+          <a href="" class="btn btn-success btn-lg" class="navbar-left" >管理する</a>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class = 'cover-tabs'>
+  <ul class="nav nav-tabs nav-justified" role="tablist">
+    <li class="active" role="presentation">
+      <a aria-controls="tab_all" data-toggle="tab" href="#tab_all" role="tab">全部</a>
+    </li>
+    <li role="presentation">
+      <a aria-controls="tab_a_line" data-toggle="tab" href="#tab_a_line" role="tab">あ</a>
+    </li>
+    <li role="presentation">
+      <a aria-controls="tab_ka_line" data-toggle="tab" href="#tab_ka_line" role="tab">か</a>
+    </li>
+    <li role="presentation">
+      <a aria-controls="tab_sa_line" data-toggle="tab" href="#tab_sa_line" role="tab">さ</a>
+    </li>
+    <li role="presentation">
+      <a aria-controls="tab_ta_line" data-toggle="tab" href="#tab_ta_line" role="tab">た</a>
+    </li>
+    <li role="presentation">
+      <a aria-controls="tab_na_line" data-toggle="tab" href="#tab_ta_line" role="tab">な</a>
+    </li>
+    <li role="presentation">
+      <a aria-controls="tab_ha_line" data-toggle="tab" href="#tab_ha_line" role="tab">は</a>
+    </li>
+    <li role="presentation">
+      <a aria-controls="tab_ma_line" data-toggle="tab" href="#tab_ma_line" role="tab">ま</a>
+    </li>
+    <li role="presentation">
+      <a aria-controls="tab_ya_line" data-toggle="tab" href="#tab_ya_line" role="tab">や</a>
+    </li>
+    <li role="presentation">
+      <a aria-controls="tab_ra_line" data-toggle="tab" href="#tab_ra_line" role="tab">ら</a>
+    </li>
+    <li role="presentation">
+      <a aria-controls="tab_wa_line" data-toggle="tab" href="#tab_wa_line" role="tab">わ</a>
+    </li>
+  </ul>
+  
+</div>
+<div class="tab-content">
+    <div class="tab-pane active" id="tab_all" role="tabpanel">
+      <p>
+        <%= render 'idols/idols', items: @idols %>
+      </p>
+    </div>
+    <div class="tab-pane" id="tab_a_line" role="tabpanel">
+      <p>
+        タブあ
+      </p>
+    </div>
+    <div class="tab-pane" id="tab_ka_line" role="tabpanel">
+      <p>
+        タブか
+      </p>
+    </div>
+        <div class="tab-pane" id="tab_sa_line" role="tabpanel">
+      <p>
+        タブさ!
+      </p>
+    </div>
+        <div class="tab-pane" id="tab_ta_line" role="tabpanel">
+      <p>
+        タブた!
+      </p>
+    </div>
+        <div class="tab-pane" id="tab_na_line" role="tabpanel">
+      <p>
+        タブな!
+      </p>
+    </div>
+        <div class="tab-pane" id="tab_ha_line" role="tabpanel">
+      <p>
+        タブは!
+      </p>
+    </div>
+        <div class="tab-pane" id="tab_ma_line" role="tabpanel">
+      <p>
+        タブま!
+      </p>
+    </div>
+        <div class="tab-pane" id="tab_ya_line" role="tabpanel">
+      <p>
+        タブや!
+      </p>
+    </div>
+        <div class="tab-pane" id="tab_ra_line" role="tabpanel">
+      <p>
+        タブら!
+      </p>
+    </div>
+        <div class="tab-pane" id="tab_wa_line" role="tabpanel">
+      <p>
+        タブわ!
+      </p>
+    </div>
+  </div>
+
+<% end %>

@@ -3,12 +3,18 @@
     <% @idols.each do |idol| %>
       <div class="idol">
         <div class="col-md-3 col-sm-4 col-xs-12">
-          <div class="panel panel-default">
-            <div class="panel-heading text-center">
-              <img src="<%= idol.idol_image %>" alt="" >
+          <div class="panel ">
+            <div class="panel-image text-center">
+              <%= image_tag idol.idol_image.thumb.to_s %>
             </div>
             <div class="panel-body">
-              <p class="idol-title"><%= idol.idol_name %></p>
+              <p class="idol-title"><%= link_to idol.idol_name, idol %></p>
+              <div class="buttons text-center">
+                <% if logged_in? %>
+                  <%= render 'thoughts/like_button', idol: idol %>
+                  <%= render 'thoughts/go_to_went_button', idol: idol %>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>

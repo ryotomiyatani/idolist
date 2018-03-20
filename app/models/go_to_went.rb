@@ -1,0 +1,2 @@
+class GoToWent < Thought
+end

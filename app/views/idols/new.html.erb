@@ -9,9 +9,11 @@
             <%= f.text_field :idol_name, class: 'form-control' %>
           </div>
 
-          <div class="form-group">
-            <%= f.label :idol_content, '説明' %>
-            <%= f.text_field :idol_content, class: 'form-control' %>
+          <div class="idol-formcontent form-group">
+            <%= f.label :idol_content, 'アイドル詳細' %>
+            <div class="text_field">
+            <%= f.text_field :idol_content, class: 'form-control'  %>
+            </div>
           </div>
 
           <div class="form-group">
@@ -21,7 +23,8 @@
 
           <div class="form-group">
             <%= f.label :idol_image, '画像' %>
-            <%= f.text_field :idol_image, class: 'form-control' %>
+            <%= f.file_field :idol_image%>
+            <%= f.hidden_field :idol_image_cache %>
           </div>
 
           <div class="text-right">

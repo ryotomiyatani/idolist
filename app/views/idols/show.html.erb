@@ -1,0 +1,60 @@
+<div class="row ">
+  <div class="col-md-12 col-sm-6 col-xs-12 ">
+    <div class="idol">
+      <div class="panel panel-default ">
+        <div class="panel-heading text-center">
+          <%= link_to image_tag @idol.idol_image.to_s %>
+        </div>
+        <div class="panel-body">
+          <p class="idol-name"><%= @idol.idol_name %></p>
+          <div class="buttons text-center">
+            <% if logged_in? %>
+              <%= render 'thoughts/like_button', idol: @idol %>
+              <%= render 'thoughts/go_to_went_button', idol: @idol %>
+            <% end %>
+                <p class="text-center"><%= link_to 'アイドル詳細ページ', @idol.idol_url, target: '_blank' %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="idolr-content">
+      <div class="panel panel-default">
+        <div class="panel-heading text-center">
+          アイドル詳細
+          </div>
+          <div class="panel-body">
+            <%= @idol.idol_content %>
+          </div>
+          </div>
+        <div class="like-users">
+      <div class="panel panel-default">
+        <div class="panel-heading text-center">
+          好きと思ってるユーザ
+        </div>
+        <div class="panel-body">
+          <% @like_users.each do |user| %>
+            <%= link_to user.name, user_path(user) %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="go_to_went-users">
+      <div class="panel panel-default">
+        <div class="panel-heading text-center">
+          行きたいと思ってるユーザ
+        </div>
+        <div class="panel-body">
+            <% @go_to_went_users.each do |user| %>
+            <%= link_to user.name, user_path(user) %>
+            <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  
+</div>

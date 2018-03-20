@@ -89,3 +89,62 @@ footer {
   margin-left: 20px;
   margin-top: 16px;
 }
+/* item */
+.panel-image{
+  height: 200px;
+  width:  200px;
+margin: auto;
+}
+.idols.panel-body {
+  height: 120px;
+}
+
+.buttons form {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.main-panel-heading{
+    height: 700px;
+  width:  700px;
+margin: auto;
+}
+/* users */
+.user-profile .name {
+  margin-bottom: 20px;
+}
+.user-profile .name h1 {
+  text-shadow: 1px 1px 1px #fff;
+  font-weight: bold;
+}
+.user-profile .status ul {
+  margin: 0 auto 10px;
+  padding: 0;
+  display: table;
+}
+.user-profile .status ul li {
+  width: 120px;
+  padding: 5px 0;
+  border-right: 1.5px solid #ddd;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  color: white;
+}
+.user-profile .status ul li:last-child {
+  border: none;
+}
+.user-profile .status ul li .status-label {
+  font-size: 20px;
+  color: black
+}
+.user-profile .status ul li .status-value {
+  font-size: 20px;
+  color: black;
+}
+
+/* idol new */
+.idol-formcontent .text_field{
+  height: 300px;
+}
+

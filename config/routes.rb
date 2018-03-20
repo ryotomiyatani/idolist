@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :new, :create]
   resources :administrators, only: [:new, :create]
-  resources :idols, only:[:index, :new, :create, :destroy]
+  resources :idols, only:[:index, :show, :new, :create, :destroy]
+  resources :thoughts, only:[:create, :destroy]
   
 end

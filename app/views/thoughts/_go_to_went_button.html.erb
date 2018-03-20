@@ -1,0 +1,13 @@
+<% if current_user.go_to_went?(idol) %>
+  <%= form_tag(thought_path(idol.id), method: :delete) do %>
+    <%= hidden_field_tag :idol_id, idol.id %>
+    <%= hidden_field_tag :type, 'Go_to_went' %>
+    <%= submit_tag '行かない', class: 'btn btn-danger' %>
+  <% end %>
+<% else %>
+  <%= form_tag(thoughts_path) do %>
+    <%= hidden_field_tag :idol_id, idol.id %>
+    <%= hidden_field_tag :type, 'Go_to_went' %>
+    <%= submit_tag '行きたい', class: 'btn btn-primary' %>
+  <% end %>
+<% end %>

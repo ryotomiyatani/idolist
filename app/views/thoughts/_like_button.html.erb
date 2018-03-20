@@ -1,0 +1,13 @@
+<% if current_user.like?(idol) %>
+  <%= form_tag(thought_path(idol.id), method: :delete) do %>
+    <%= hidden_field_tag :idol_id, idol.id %>
+    <%= hidden_field_tag :type, 'Like' %>
+    <%= submit_tag '興味ない', class: 'btn btn-danger' %>
+  <% end %>
+<% else %>
+  <%= form_tag(thoughts_path) do %>
+    <%= hidden_field_tag :idol_id, idol.id %>
+    <%= hidden_field_tag :type, 'Like' %>
+    <%= submit_tag '好き', class: 'btn btn-primary' %>
+  <% end %>
+<% end %>

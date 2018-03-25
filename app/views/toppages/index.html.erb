@@ -11,7 +11,7 @@
       </div>
     <% end %>
       <div class="cover-contents">
-        <h1>あなたの好きなアイドルを管理しよう</h1>
+        <h1>あなたの好きなアイドルを<br>管理しよう</h1>
         <% unless logged_in? || admin_logged_in? %>
           <a href="" class="btn btn-success btn-lg" class="navbar-left" >管理する</a>
         <% end %>
@@ -29,20 +29,20 @@
 <div class="col-xs-8">
   <div class="cover-tabs">
     <ul class="nav nav-tabs nav-justified">
-      <li class="<%='activ' if current_page?(root_path) %>"><%= link_to controller: 'toppages', action: 'index' do %>全部<% end %></li>
-      <li class="<%='activ' if current_page?(root_path) %>"><%= link_to controller: 'toppages', action: 'index',name_a: 'あ' do %>あ行<% end %></li>
-      <li class="<%='activ' if current_page?(root_path) %>"><%= link_to controller: 'toppages', action: 'index',name_ka: 'か' do %>か行<% end %></li>
-      <li class="<%='activ' if current_page?(root_path) %>"><%= link_to controller: 'toppages', action: 'index',name_sa: 'さ' do %>さ行<% end %></li>
-      <li class="<%='activ' if current_page?(root_path) %>"><%= link_to controller: 'toppages', action: 'index',name_ta: 'た' do %>た行<% end %></li>
-      <li class="<%='activ' if current_page?(root_path) %>"><%= link_to controller: 'toppages', action: 'index',name_na: 'な' do %>な行<% end %></li>
-      <li class="<%='activ' if current_page?(root_path) %>"><%= link_to controller: 'toppages', action: 'index',name_ha: 'は' do %>は行<% end %></li>
-      <li class="<%='activ' if current_page?(root_path) %>"><%= link_to controller: 'toppages', action: 'index',name_ma: 'ま' do %>ま行<% end %></li>
-      <li class="<%='activ' if current_page?(root_path) %>"><%= link_to controller: 'toppages', action: 'index',name_ya: 'や' do %>や行<% end %></li>
-      <li class="<%='activ' if current_page?(root_path) %>"><%= link_to controller: 'toppages', action: 'index',name_ra: 'ら' do %>ら行<% end %></li>
-      <li class="<%='activ' if current_page?(root_path) %>"><%= link_to controller: 'toppages', action: 'index',name_wa: 'わ' do %>わ行<% end %></li>
+      <li class="<%='activ' if current_page?(root_path) %>"><%= link_to controller: 'toppages', action: 'index' do %><h5>全部</h5><% end %></li>
+      <li class="<%='activ' if current_page?(root_path) %>"><%= link_to controller: 'toppages', action: 'index',name_a: 'あ' do %><h5>あ行</h5><% end %></li>
+      <li class="<%='activ' if current_page?(root_path) %>"><%= link_to controller: 'toppages', action: 'index',name_ka: 'か' do %><h5>か行</h5><% end %></li>
+      <li class="<%='activ' if current_page?(root_path) %>"><%= link_to controller: 'toppages', action: 'index',name_sa: 'さ' do %><h5>さ行</h5><% end %></li>
+      <li class="<%='activ' if current_page?(root_path) %>"><%= link_to controller: 'toppages', action: 'index',name_ta: 'た' do %><h5>た行</h5><% end %></li>
+      <li class="<%='activ' if current_page?(root_path) %>"><%= link_to controller: 'toppages', action: 'index',name_na: 'な' do %><h5>な行</h5><% end %></li>
+      <li class="<%='activ' if current_page?(root_path) %>"><%= link_to controller: 'toppages', action: 'index',name_ha: 'は' do %><h5>は行</h5><% end %></li>
+      <li class="<%='activ' if current_page?(root_path) %>"><%= link_to controller: 'toppages', action: 'index',name_ma: 'ま' do %><h5>ま行</h5><% end %></li>
+      <li class="<%='activ' if current_page?(root_path) %>"><%= link_to controller: 'toppages', action: 'index',name_ya: 'や' do %><h5>や行</h5><% end %></li>
+      <li class="<%='activ' if current_page?(root_path) %>"><%= link_to controller: 'toppages', action: 'index',name_ra: 'ら' do %><h5>ら行</h5><% end %></li>
+      <li class="<%='activ' if current_page?(root_path) %>"><%= link_to controller: 'toppages', action: 'index',name_wa: 'わ' do %><h5>わ行</h5><% end %></li>
     </ul>
-        <%= render 'idols/idols', idols: @idols %>
-        </div>
+      <%= render 'idols/idols', idols: @idols %>
+  </div>
   </div>
   </div>
 <% end %>

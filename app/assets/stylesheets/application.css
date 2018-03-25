@@ -66,8 +66,7 @@ footer {
   letter-spacing: 0.15em;
 }
 .cover .cover-inner .cover-contents {
-    margin: 50px;
-    padding: 50px;
+
   display: table-cell;
   text-align: center;
   position: relative;
@@ -80,11 +79,21 @@ footer {
 }
 
 .cover-tabs{
-  width: 984px;
+  width: 1100px;
   margin: 0 auto;
   margin-bottom: 16px;
-  
+
+
 }
+.cover-tabs li {
+   background-color: black;
+    margin-bottom: 16px;
+}
+.cover-tabs h5{
+  color: white;
+
+}
+
 .tab-content {
   width: 984px;
   margin-left: 20px;

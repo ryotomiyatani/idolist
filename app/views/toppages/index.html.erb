@@ -13,7 +13,8 @@
       <div class="cover-contents">
         <h1>あなたの好きなアイドルを<br>管理しよう</h1>
         <% unless logged_in? || admin_logged_in? %>
-          <a href="" class="btn btn-success btn-lg" class="navbar-left" >管理する</a>
+        <%= link_to '管理する',login_path, class: 'btn btn-success btn-lg' %>
+
         <% end %>
       </div>
     </div>

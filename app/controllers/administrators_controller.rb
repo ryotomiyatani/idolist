@@ -9,7 +9,7 @@ class AdministratorsController < ApplicationController
 
     if @administrator.save
       flash[:success] = '管理者を登録しました。'
-      redirect_to @idol
+      redirect_to idols_url
     else
       flash.now[:danger] = '管理者の登録に失敗しました。'
       render 'new'
@@ -19,6 +19,6 @@ class AdministratorsController < ApplicationController
     private
 
   def administrator_params
-    params.require(:administrator).permit(:name_id, :password, :password_confirmation)
+    params.require(:administrator).permit(:name, :password, :password_confirmation)
   end
 end

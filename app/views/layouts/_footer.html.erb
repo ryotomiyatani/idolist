@@ -5,7 +5,7 @@
             <li><%= link_to "トップページ", root_path %></li>
             <li><%= link_to "マイページ", login_path %></li>
             <li><%= link_to 'ランキング',signup_path %></li>
-            <li><%= link_to "お問い合わせ", '#' %></li>
+            <li><%= link_to "お問い合わせ", new_inquiry_path %></li>
         </ul>
     </div>
     <% elsif admin_logged_in? %>
@@ -24,7 +24,7 @@
             <li><%= link_to "ログイン", login_path %></li>
             <li><%= link_to '新規登録',signup_path %></li>
             <li><%= link_to "管理者ログイン", admin_login_path %></li>
-            <li><%= link_to "お問い合わせ", '#' %></li>
+            <li><%= link_to "お問い合わせ", new_inquiry_path %></li>
         </ul>
     </div>
     <% end %>

@@ -1,0 +1,30 @@
+<% if admin_logged_in? %>
+<ul>
+<h1>お問い合わせ一覧</h1>
+
+ <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr class="info">
+    <th class="text-center">ユーザ名</th>
+    <th class="text-center">メール</th>
+    <th class="text-center">メッセージ</th>
+    <th class="text-center">削除</th>
+      </tr>
+    </thead>
+    <tbody>
+
+
+  <% @inquiries.each do |inquiry| %>
+    <tr >
+     <td><%= inquiry.user %></td>
+     <td><%= inquiry.email %></td>
+     <td><%= link_to "内容" ,inquiry_path(inquiry.id) %></td>
+    <td><%= link_to "このメッセージを削除する", inquiry, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: 'btn btn-danger btn-xs' %></td>
+    </tr >
+     
+  <% end %>
+      </tbody>
+  </table>
+</ul>
+<% end %>
+<%= paginate @inquiries %>

@@ -1,10 +1,27 @@
 <% if admin_logged_in? %>
+      <ul>
 <h1>アイドル一覧</h1>
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr class="info">
+    <th class="text-center">ID</th>
+    <th class="text-center">アイドル名</th>
+    <th class="text-center">編集へ</th>
+    <th class="text-center">削除</th>
+      </tr>
+    </thead>
+    <tbody>
 
-<ul>
   <% @idols.each do |idol| %>
-     <li><%= link_to idol.id, idol %> : <%= idol.idol_name %></li>
-     <li><%= link_to "このアイドルを削除する", idol, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: 'btn btn-danger btn-xs' %><li>
-  <% end %>
+  <tr >
+     <td class="info"><%= link_to idol.id, idol %></td>
+     <td><%= idol.idol_name %></td>
+     <td><%= link_to 'このアイドルを編集する', edit_idol_path(idol) %></td>
+     <td><%= link_to "このアイドルを削除する", idol, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: 'btn btn-danger btn-xs' %></td>
+  </tr>
+       <% end %>
+      </tbody>
+  </table>
 </ul>
 <% end %>
+<%= paginate @idols %>

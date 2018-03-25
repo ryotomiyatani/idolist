@@ -1,22 +1,24 @@
 <div class="row">
   <div class="col-xs-offset-3 col-xs-6">
     <div class="panel panel-default">
-      <div class="panel-heading">アイドル登録</div>
-      <div class="panel-body">
-        <%= form_for(@idol) do |f| %>
-          <div class="form-group">
+      <div class="panel-heading"><h1><%= @idol.idol_name %>の編集</h1></div>
+        <div class="panel-body">
+          <%= form_for(@idol) do |f| %>
+         <div class="form-group">
             <%= f.label :idol_name, 'アイドル名' %>
             <%= f.text_field :idol_name, class: 'form-control' %>
           </div>
-          
+
           <div class="form-group">
             <%= f.label :idol_namekana, 'アイドル名(かな)' %>
             <%= f.text_field :idol_namekana, class: 'form-control' %>
           </div>
-
+          
           <div class="idol-formcontent form-group">
-            <%= f.label :idol_content, 'アイドル説明' %>
-            <%= f.text_area :idol_content, :size => "10x10",class: 'form-control'%>
+            <%= f.label :idol_content, 'アイドル詳細' %>
+            <div class="text_field">
+            <%= f.text_field :idol_content, class: 'form-control'  %>
+            </div>
           </div>
 
           <div class="form-group">
@@ -29,12 +31,12 @@
             <%= f.file_field :idol_image%>
             <%= f.hidden_field :idol_image_cache %>
           </div>
-
-          <div class="text-right">
-            <%= f.submit '登録する', class: 'btn btn-success form-control' %>
+          <%= f.submit '変更' %>
+          <div>
+          <%= link_to '一覧に戻る', idols_url %>
           </div>
-        <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>
+<% end %>

@@ -14,7 +14,7 @@ class User < ApplicationRecord
   has_many :think_likes, through: :likes, class_name: 'Idol', source: :idol
   has_many :go_to_wents
   has_many :think_goes, through: :go_to_wents, class_name: 'Idol', source: :idol
-  has_many :thoughts, dependent: :destroy
+  has_many :thoughts, dependent: :delete_all
   
   def like(idol)
     self.likes.find_or_create_by(idol_id: idol.id)

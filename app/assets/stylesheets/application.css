@@ -44,7 +44,7 @@ footer {
   margin-bottom: 20px;
   width: 100%;
   height: 400px;
-  background: url("/images/liveimage.jpg") center center no-repeat;
+  background: url("/images/live_image1.jpg") center center no-repeat;
   background-size: cover;
 
 }
@@ -56,11 +56,12 @@ footer {
  .cover-comments{
     margin: 70px 30px;
     padding: 10px;
+    color: white;
    border:double black;
   border-width:0 0 0 10px;
 }
  .cover-comments h4{
-  color: black;
+  color: white;
   font-weight: bold;
   letter-spacing: 0.15em;
 }
@@ -73,7 +74,7 @@ footer {
 }
 .cover .cover-inner .cover-contents h1 {
   margin: 0 0 20px 0;
-  color: black;
+  color: white;
   font-weight: bold;
   letter-spacing: 0.15em;
 }
@@ -144,7 +145,23 @@ margin: auto;
 }
 
 /* idol new */
-.idol-formcontent .text_field{
+.idol-formcontent .text-field{
   height: 300px;
 }
 
+
+/* ranking panel footer */
+.panel-heading{
+  font-size: 30px;
+}
+.panel-footer{
+  font-size: 15px;
+}
+.idol-name{
+  font-size: 18px;
+}
+
+/* inquiry */
+.inquiry-label{
+  text-decoration: underline;
+}

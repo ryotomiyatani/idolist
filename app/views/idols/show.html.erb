@@ -12,7 +12,9 @@
               <%= render 'thoughts/like_button', idol: @idol %>
               <%= render 'thoughts/go_to_went_button', idol: @idol %>
             <% end %>
+            <% if @idol.idol_url.present? %>
                 <p class="text-center"><%= link_to 'アイドル詳細ページ', @idol.idol_url, target: '_blank' %></p>
+            <% end %>
           </div>
         </div>
       </div>

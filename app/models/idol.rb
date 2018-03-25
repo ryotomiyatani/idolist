@@ -2,8 +2,8 @@ class Idol < ApplicationRecord
   mount_uploader :idol_image, IdolImageUploader
   validates :idol_name, presence: true, length: { maximum: 255 },
                         uniqueness: { case_sensitive: false }
-  validates :idol_content, presence: true, length: { maximum: 1000 }
-  validates :idol_url, presence: true, length: { maximum: 255 }
+  validates :idol_content,  length: { maximum: 1000 }
+  validates :idol_url,length: { maximum: 255 }
   default_scope -> { order(idol_namekana: :ASC) }
   
   has_many :thoughts

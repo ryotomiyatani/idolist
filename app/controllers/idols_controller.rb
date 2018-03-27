@@ -1,7 +1,7 @@
 class IdolsController < ApplicationController
   
   def index
-        @idols = Idol.all.page(params[:page]).per(100)
+    @idols = Idol.all.order(:idol_namekana).page(params[:page]).per(100)
 
   end
 

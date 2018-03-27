@@ -1,5 +1,5 @@
 class Idol < ApplicationRecord
-  default_scope -> { order(idol_namekana: :ASC) }
+
   mount_uploader :idol_image, IdolImageUploader
   validates :idol_name, presence: true, length: { maximum: 255 },
                         uniqueness: { case_sensitive: false }

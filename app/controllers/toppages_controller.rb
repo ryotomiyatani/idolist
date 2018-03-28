@@ -1,6 +1,6 @@
 class ToppagesController < ApplicationController
   def index
-           @idols = Idol.all.page(params[:page]).order(:idol_namekana).per(100)
+           @idols = Idol.all.page(params[:page]).per(100)
         if params[:name].present? 
           @idols = Idol.get_by_idol_name(params[:name]).order(:idol_namekana).page(params[:page]).per(100)
         end

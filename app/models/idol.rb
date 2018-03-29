@@ -4,7 +4,8 @@ class Idol < ApplicationRecord
                         uniqueness: { case_sensitive: false }
   validates :idol_content,  length: { maximum: 2000 }
   validates :idol_url,length: { maximum: 255 }
-  default_scope -> { order(idol_namekana: :ASC) }
+
+  default_scope -> { order(idol_namekana:  :ASC) }
   
   has_many :thoughts
   has_many :users, through: :thoughts

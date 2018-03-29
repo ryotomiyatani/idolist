@@ -19,6 +19,11 @@ default: &default
 
 development:
   <<: *default
+  adapter: mysql2
+  encoding: utf8
+  charset: utf8
+  collation: utf8_general_ci
+  reconnect: false
   database: idolist_development
 
 # Warning: The database defined as "test" will be erased and

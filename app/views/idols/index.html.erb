@@ -4,7 +4,7 @@
   <table class="table table-striped table-bordered table-hover">
     <thead>
       <tr class="info">
-    <th class="text-center">ID</th>
+    <th class="text-center">詳細</th>
     <th class="text-center">アイドル名</th>
     <th class="text-center">編集へ</th>
     <th class="text-center">削除</th>
@@ -14,7 +14,7 @@
 
   <% @idols.each do |idol| %>
   <tr >
-     <td class="info"><%= link_to idol.id, idol %></td>
+     <td class="info"><%= link_to '詳細', idol %></td>
      <td><%= idol.idol_name %></td>
      <td><%= link_to 'このアイドルを編集する', edit_idol_path(idol) %></td>
      <td><%= link_to "このアイドルを削除する", idol, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: 'btn btn-danger btn-xs' %></td>

@@ -1,6 +1,9 @@
 class ToppagesController < ApplicationController
   def index
-           @idols = Idol.all.page(params[:page]).per(100)
+        idols = Idol.all
+        sort_by_idolname(idols)
+        
+           @idols = idols.page(params[:page]).per(100)
         if params[:name].present? 
           @idols = Idol.get_by_idol_name(params[:name]).order(:idol_namekana).page(params[:page]).per(100)
         end
@@ -12,7 +15,7 @@ class ToppagesController < ApplicationController
         elsif params[:name_sa] == "さ"
           @idols = Idol.get_by_name_sa("さ%").order(:idol_namekana).page(params[:page]).per(100)
         elsif params[:name_ta] == "た"
-          @idols = Idol..get_by_name_ta("た%").order(:idol_namekana).page(params[:page]).per(100)
+          @idols = Idol.get_by_name_ta("た%").order(:idol_namekana).page(params[:page]).per(100)
         elsif params[:name_na] == "な"
           @idols = Idol.get_by_name_na("な%").order(:idol_namekana).page(params[:page]).per(100)
         elsif params[:name_ha] == "は"
@@ -27,4 +30,13 @@ class ToppagesController < ApplicationController
           @idols = Idol.get_by_name_wa("わ%").order(:idol_namekana).page(params[:page]).per(100)
       end
   end
+  
+  def sort_by_idolname(idols=[])
+  origin = "ａ-ｚＡ-Ｚァ-ン０-９ぁぃぅぇぉがぎぐげござじずぜぞだぢづでどばびぶべぼぱぴぷぺぽゃゅょっゎァィゥェォガギグゲゴザジズゼゾダヂヅデドバビブベボパピプペポャュョッヮ"
+  normalize = "a-zA-Zぁ-ん0-9あいうえおかきくけこさしすせそたちつてとはひふへほはひふへほやゆよつわあいうえおかきくけこさしすせそたちつてとはひふへほはひふへほやゆよつわ"
+
+  idols.sort_by{|a| [a.idol_namekana.tr(origin, normalize)]}
+end
+
+
 end
